@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/btc-auto-invest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rollup-android-demo" vcs="Git" />
   </component>
 </project>
