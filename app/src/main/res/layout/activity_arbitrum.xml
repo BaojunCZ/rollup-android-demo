@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="demo.rollup.activity.arbitrum.ArbitrumViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,9 +15,25 @@
         android:layout_height="match_parent"
         tools:context=".activity.arbitrum.ArbitrumActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvL1BalanceTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="L1 ETH"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvL1Balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvL1BalanceTitle"
+            app:layout_constraintStart_toEndOf="@id/tvL1BalanceTitle"
+            app:layout_constraintTop_toTopOf="@id/tvL1BalanceTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
