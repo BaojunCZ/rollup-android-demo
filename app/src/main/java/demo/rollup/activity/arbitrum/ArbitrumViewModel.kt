@@ -3,9 +3,9 @@ package demo.rollup.activity.arbitrum
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import demo.rollup.constant.ArbitrumConstants
 import demo.rollup.constant.Constants
-import demo.rollup.utils.ArbitrumManager
+import demo.rollup.manager.arbitrum.ArbitrumConstants
+import demo.rollup.manager.arbitrum.ArbitrumManager
 import demo.rollup.utils.SPUtil
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.cancel
@@ -28,19 +28,45 @@ class ArbitrumViewModel : ViewModel() {
     private val address: String = Numeric.prependHexPrefix(Keys.getAddress(ecKeyPair))
 
     val l1Balance = MutableLiveData(BigInteger.ZERO)
+    val l2Balance = MutableLiveData(BigInteger.ZERO)
+    val l1Inbox = MutableLiveData(BigInteger.ZERO)
+    val l1Pending = MutableLiveData(BigInteger.ZERO)
 
     init {
         getL1Balance()
+        getL2Balance()
+        getL1InboxBalance()
     }
 
-    fun getL1Balance() {
+    private fun getL1Balance() {
         viewModelScope.launch(IO) {
             try {
-                val balance = arbitrumManager.getL1Balance(address)
-                l1Balance.postValue(balance)
+                l1Balance.postValue(arbitrumManager.getL1Balance(address))
             } catch (e: Exception) {
                 e.printStackTrace()
-                l1Balance.postValue(BigInteger.ZERO)
+                l1Balance.postValue(null)
+            }
+        }
+    }
+
+    private fun getL2Balance() {
+        viewModelScope.launch(IO) {
+            try {
+                l2Balance.postValue(arbitrumManager.getL2Balance(address))
+            } catch (e: Exception) {
+                e.printStackTrace()
+                l2Balance.postValue(null)
+            }
+        }
+    }
+
+    private fun getL1InboxBalance() {
+        viewModelScope.launch(IO) {
+            try {
+                l1Inbox.postValue(arbitrumManager.getL1InboxBalance(address))
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+                l1Inbox.postValue(null)
             }
         }
     }

@@ -35,5 +35,66 @@
             app:layout_constraintStart_toEndOf="@id/tvL1BalanceTitle"
             app:layout_constraintTop_toTopOf="@id/tvL1BalanceTitle" />
 
+        <TextView
+            android:id="@+id/tvL1LockBoxTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="L1 ETH Lock Box"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvL1BalanceTitle" />
+
+        <TextView
+            android:id="@+id/tvL1LockBoxBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvL1LockBoxTitle"
+            app:layout_constraintStart_toEndOf="@id/tvL1LockBoxTitle"
+            app:layout_constraintTop_toTopOf="@id/tvL1LockBoxTitle" />
+
+        <TextView
+            android:id="@+id/tvL1PendingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="L1 ETH Pending"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvL1LockBoxTitle" />
+
+        <TextView
+            android:id="@+id/tvL1Pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvL1PendingTitle"
+            app:layout_constraintStart_toEndOf="@id/tvL1PendingTitle"
+            app:layout_constraintTop_toTopOf="@id/tvL1PendingTitle" />
+
+        <TextView
+            android:id="@+id/tvL2BalanceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="L2 ETH"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvL1PendingTitle" />
+
+        <TextView
+            android:id="@+id/tvL2Balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvL2BalanceTitle"
+            app:layout_constraintStart_toEndOf="@id/tvL2BalanceTitle"
+            app:layout_constraintTop_toTopOf="@id/tvL2BalanceTitle" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
